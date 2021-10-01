@@ -4,7 +4,6 @@ from Jumper import Jumper
 pygame.init()
 
 size = width, height = 1280, 720
-speed = [1, 1]
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
@@ -14,7 +13,7 @@ rightPressed = False
 spacePressed = False
 
 ball = pygame.image.load("assets/soccer-ball.png")
-jumper = Jumper(0, height - 200)
+jumper = Jumper(0, height - Jumper.h)
 ballrect = ball.get_rect(topleft=(jumper.x, jumper.y))
 
 while 1:
@@ -56,7 +55,7 @@ while 1:
     ballrect.x = jumper.x
     ballrect.y = jumper.y
 
-    if jumper.y >= height - 200:
+    if jumper.y >= height - Jumper.h:
         jumper.isJumping = False
         jumper.y = height - 200
         jumper.yspeed = 0
