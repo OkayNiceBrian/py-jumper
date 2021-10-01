@@ -7,6 +7,7 @@ size = width, height = 1280, 720
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
+clock = pygame.time.Clock()
 
 leftPressed = False
 rightPressed = False
@@ -38,6 +39,8 @@ while 1:
                 spacePressed = False
 
     # Update
+    speedConstant = clock.tick(60)
+
     if leftPressed and rightPressed:
         jumper.stop()
     elif leftPressed:
@@ -50,7 +53,7 @@ while 1:
     if spacePressed:
         jumper.jump()
 
-    jumper.update()
+    jumper.update(speedConstant)
 
     ballrect.x = jumper.x
     ballrect.y = jumper.y

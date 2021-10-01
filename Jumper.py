@@ -4,8 +4,8 @@ from World import World
 class Jumper:
     w = 100
     h = 200
-    baseXspeed = 1
-    baseJumpForce = 5
+    baseXspeed = 0.5
+    baseJumpForce = 3
 
     def __init__(self, x, y):
         self.x = x
@@ -15,9 +15,9 @@ class Jumper:
         self.yspeed = 0
         self.isJumping = False
 
-    def update(self):
-        self.x += self.xspeed
-        self.y += self.yspeed
+    def update(self, speedConstant):
+        self.x += self.xspeed * speedConstant
+        self.y += self.yspeed * speedConstant
 
         if self.isJumping:
             self.yspeed += World.gravity
