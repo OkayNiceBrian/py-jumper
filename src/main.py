@@ -13,7 +13,7 @@ leftPressed = False
 rightPressed = False
 spacePressed = False
 
-ball = pygame.image.load("assets/buddha.png")
+ball = pygame.image.load("../assets/buddha.png")
 jumper = Jumper(0, height - Jumper.h)
 ballrect = ball.get_rect(topleft=(jumper.x, jumper.y))
 
