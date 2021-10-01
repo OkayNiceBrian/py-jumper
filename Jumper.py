@@ -4,8 +4,8 @@ from World import World
 class Jumper:
     w = 100
     h = 200
-    baseXspeed = 2
-    baseJumpForce = 10
+    baseXspeed = 1
+    baseJumpForce = 5
 
     def __init__(self, x, y):
         self.x = x
